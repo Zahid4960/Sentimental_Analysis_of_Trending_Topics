@@ -1,0 +1,180 @@
+<!-- load static folder from sentiment application -->  
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- bootstrap font awesome cdn (content delivery network)-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- font awesome cdn (content delivery network)-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- link main.css from static folder of sentiment application -->
+    <link rel="stylesheet" type="text/css" href="{% static 'Sentiment/main.css' %}">
+    <!-- link footer.css from static folder of sentiment application -->
+    <link rel="stylesheet" type="text/css" href="{% static 'Sentiment/footer.css' %}">
+
+    <!-- dynamic title for sentiment application -->
+    {% if title %}
+        <title>Sentiment - {{ title }}</title>
+    {% else %}
+        <title>Sentiment Blog</title>
+    {% endif %}
+</head>
+<body>
+  <!-- navigation bar for the project -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'Sentiment-home' %}">Sentiment Analysis</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'Sentiment-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'Sentiment-trending' %}">Trending</a>
+              <a class="nav-item nav-link" href="{% url 'Sentiment-checkRandom' %}">Check Random</a>
+              <a class="nav-item nav-link" href="{% url 'Sentiment-about' %}">About</a>
+              <a class="nav-item nav-link" href="{% url 'Sentiment-contact' %}">Contact</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="#">Login</a>
+              <a class="nav-item nav-link" href="#">Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- for block content -->
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}{% endblock %}
+        </div>
+        <!-- for sidebar of the project sentiment-->
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+        <!-- Footer -->
+  <footer class="page-footer font-small mdb-color pt-4">
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
+        <!-- Grid column -->
+        <!--  history from wiki about diu university-->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Daffodil International University</h6>
+          <p style="text-align: justify;">Daffodil International University is a private university located in Dhanmondi, Dhaka, Bangladesh. It was established on 24 January 2002 under the Private University Act, 1992. DIU is the first university in Bangladesh to have signed the UN's Commitment to Sustainable Practices of Higher Education Institutions</p>
+        </div>
+        <hr class="w-100 clearfix d-md-none">
+        <!-- Grid column -->
+        <!-- some useful links of university -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <p>
+            <a style="color: #ffffff" href="https://daffodilvarsity.edu.bd/">Daffodil International University</a>
+          </p>
+          <p>
+            <a style="color: #ffffff" href="https://daffodilvarsity.edu.bd/international/international-contact"> Office of the international affiars DIU </a>
+          </p>
+          <p>
+            <a style="color: #ffffff" href="https://dsa.daffodilvarsity.edu.bd/">Diu students affiars</a>
+          </p>
+          <p>
+            <a style="color: #ffffff" href="https://cdc.daffodilvarsity.edu.bd/">Diu career development center</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+        <!-- Grid column -->
+        <!-- Full address and contacts of the university-->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> 4/2, Sobhanbag, Mirpur Rd, Dhaka 1207</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@daffodilvarsity.edu.bd </p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> +88 48111639, 48111670, 9128705, 9132634</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> 88-02-9131947</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Footer links -->
+      <hr>
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+        <!-- Grid column -->
+        <div class="col-md-7 col-lg-8">
+          <!--Copyright-->
+          <p class="text-center text-md-left">© 2019 Copyright:
+              <strong> Daffodil International University</strong><br>
+              <strong>Department of Computer Science and University</strong>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-5 col-lg-4 ml-lg-0">
+          <!-- Social buttons -->
+          <!-- facebook link of daffodil university -->
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a style="color: #ffffff" class="btn-floating btn-sm rgba-white-slight mx-1" href="https://www.facebook.com/daffodilvarsity.edu.bd/">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <!--twitter link of daffodil university-->
+              <li class="list-inline-item">
+                <a style="color: #ffffff" class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/daffodilvarsity">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <!--google plus link of daffodil university-->
+              <li class="list-inline-item">
+                <a style="color: #ffffff" class="btn-floating btn-sm rgba-white-slight mx-1" href="https://plus.google.com/communities/117527353507488410868">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <!--linkedin link of daffodil university-->
+              <li class="list-inline-item">
+                <a style="color: #ffffff" class="btn-floating btn-sm rgba-white-slight mx-1" href="https://www.linkedin.com/school/daffodil-international-university/">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
