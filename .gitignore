@@ -1,2 +1,11 @@
-# git will ignores templates folder from Sentiment app
+# git will ignore templates folder from Sentiment app
 Sentiment/templates/
+
+# git will ignore static folder from Sentiment app
+Sentiment/static/
+
+# ignore all the files that has extention .html
+*.html
+
+# ignore all the files that has extention .css
+*.css
