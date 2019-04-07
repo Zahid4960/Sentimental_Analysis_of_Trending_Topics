@@ -23,9 +23,9 @@
 
     <!-- dynamic title for sentiment application -->
     {% if title %}
-        <title>Sentiment - {{ title }}</title>
+        <title>Sentiment | {{ title }}</title>
     {% else %}
-        <title>Sentiment Blog</title>
+        <title>Sentiment Analysys</title>
     {% endif %}
 </head>
 <body>
@@ -58,6 +58,14 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+          <!-- for alert messages -->
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
           {% block content %}{% endblock %}
         </div>
         <!-- for sidebar of the project sentiment-->
@@ -85,14 +93,14 @@
         <!-- Grid column -->
         <!--  history from wiki about diu university-->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Daffodil International University</h6>
+          <h6 style="color: #b4e8c6" class="text-uppercase mb-4 font-weight-bold">Daffodil International University</h6>
           <p style="text-align: justify;">Daffodil International University is a private university located in Dhanmondi, Dhaka, Bangladesh. It was established on 24 January 2002 under the Private University Act, 1992. DIU is the first university in Bangladesh to have signed the UN's Commitment to Sustainable Practices of Higher Education Institutions</p>
         </div>
         <hr class="w-100 clearfix d-md-none">
         <!-- Grid column -->
         <!-- some useful links of university -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <h6 style="color: #b4e8c6" class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
           <p>
             <a style="color: #ffffff" href="https://daffodilvarsity.edu.bd/">Daffodil International University</a>
           </p>
@@ -111,7 +119,7 @@
         <!-- Grid column -->
         <!-- Full address and contacts of the university-->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <h6 style="color: #b4e8c6" class="text-uppercase mb-4 font-weight-bold">Contact</h6>
           <p>
             <i class="fas fa-home mr-3"></i> 4/2, Sobhanbag, Mirpur Rd, Dhaka 1207</p>
           <p>
