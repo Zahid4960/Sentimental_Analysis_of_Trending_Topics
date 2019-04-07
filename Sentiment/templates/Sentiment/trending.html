@@ -1,7 +1,17 @@
 {% extends "Sentiment/base.html" %}
-	
-	{% block content %}
-	
-		<h1>This is the trending topic page of social media</h1>
-
-	{% endblock content %}	
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- search trending topics -->
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search Trending Topics Here</legend>
+                {{ trending_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}	
