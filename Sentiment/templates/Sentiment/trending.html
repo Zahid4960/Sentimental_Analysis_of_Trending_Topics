@@ -1,17 +1,20 @@
-{% extends "Sentiment/base.html" %}
+<!--{% extends "Sentiment/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<!-- search trending topics -->
+search trending 
     <div class="content-section">
-        <form method="POST">
+         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Search Trending Topics Here</legend>
+                <legend for="{{ input_hastag.search.id_for_label }}" class="border-bottom mb-4">Search Trending Topics Here</legend>
                 {{ trending_form|crispy }}
+                {{ input_hastag.search }}
+                <input type="search" name="search" class="form-control" placeholder="Enter trending topic which you want to analysis">
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Search</button>
+                <button class="btn btn-outline-info" type="submit"><a href="{% url 'Sentiment-search_result' %}">Search</a></button>
             </div>
         </form>
     </div>
 {% endblock content %}	
+-->
